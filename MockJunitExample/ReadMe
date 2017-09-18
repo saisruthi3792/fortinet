@@ -1,0 +1,8 @@
+We can mock the database for unit testing the service layer. 
+Unit testing means testing the behavior of the current method and not its dependencies.
+In service layer, we invoke the Dao objects, which in turn interacts with the database. 
+Therefore, when we want to unit test the service layer alone, 
+we are actually doing the integration test. 
+Hence, when we are testing some behavior that is dependent on another behavior, 
+we can mock the dependent behavior. In our case, the dependent behavior is the Dao class. 
+We can mock the behavior of the DAO class and test the functionality of the service class alone. 

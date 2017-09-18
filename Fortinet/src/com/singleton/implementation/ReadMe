@@ -1,0 +1,25 @@
+Singleton design pattern is implemented in Singleton.java class.
+Singleton Pattern:
+It is a creational design pattern. It restricts class instantiation to a single object.
+It is achieved by making the constructor of the class private. This is supposed to be
+used when only one instance of the class is required for the entire application and its
+state does not change through out the application.
+We can initialize the object in two ways.
+1. Early Initialization
+2. Lazy Initialization
+
+Lazy Initialization is preferred over the early initialization.
+But it will cause problems in multi-threaded environment.
+The best way to implement is double checked locking which I have followed in the program.
+
+In this way, instead of making the method that instantiates the object synchronized, we
+introduce a synchronized block inside the method along with making the object volatile.
+Volatile makes sure that the object is never cached.
+
+Singleton pattern can be used in cases like logger where the entire application accessed by multiple
+clients at the same time has to log in a single file. Hence, only one object of the logger class is
+required across the entire application.
+It can also be used in cases where hardware needs to be shared like in case of printers where only
+one printer is being shared across many desktops.
+
+It is difficult to do unti testing in singleton design pattern.
